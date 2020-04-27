@@ -10,7 +10,7 @@ source:
   sha256: 546c81d1cb952e25cd7660642741530e12c3b5053bacd54c7e745c4eae8becee
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - pyboat = pyboat:main  
@@ -22,7 +22,7 @@ requirements:
     - python
     - flit-core >=2.3
   run:
-    - matplotlib >=3.1
+    - matplotlib-base >=3.1
     - numpy >=1.18
     - pandas >=0.25
     - pyqt >=5.9
