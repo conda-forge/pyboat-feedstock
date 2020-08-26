@@ -5,7 +5,7 @@ Home: https://github.com/tensionhead/pyboat
 
 Package license: GPL-3.0-or-later
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: pyBOAT - A Biological Oscillations Analysis Toolkit
 
