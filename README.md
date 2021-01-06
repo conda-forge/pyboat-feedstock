@@ -5,9 +5,11 @@ Home: https://github.com/tensionhead/pyboat
 
 Package license: GPL-3.0-or-later
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pyboat-feedstock/blob/master/LICENSE.txt)
 
 Summary: pyBOAT - A Biological Oscillations Analysis Toolkit
+
+Development: https://github.com/tensionhead/pyboat
 
 Interactive time-frequency analysis for biological data
 using wavelets. Features optimal sinc filter for
