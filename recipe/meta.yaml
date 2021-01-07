@@ -1,5 +1,5 @@
 {% set name = "pyboat" %}
-{% set version = "0.9.0" %}
+{% set version = "0.9.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: fe8569f7e5800bc994641dbe3b1f24cce4b00d44cabf7845e11f6d36167ac877
+  sha256: c1ae5d786612b8de5a18b75c2d81d1b508d2ae274c5b02120be43c45467e7803
 
 build:
   number: 0
