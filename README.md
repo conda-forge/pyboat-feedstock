@@ -1,11 +1,11 @@
-About pyboat
-============
+About pyboat-feedstock
+======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pyboat-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/tensionhead/pyboat
 
 Package license: GPL-3.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pyboat-feedstock/blob/main/LICENSE.txt)
 
 Summary: pyBOAT - A Biological Oscillations Analysis Toolkit
 
