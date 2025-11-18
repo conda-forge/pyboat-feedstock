@@ -1,5 +1,6 @@
 {% set name = "pyboat" %}
 {% set version = "1.0.0" %}
+{% set python_min = "3.11" %}
 
 package:
   name: {{ name|lower }}
@@ -18,10 +19,10 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.11
-    - flit-core >=3.11, <4
+    - python {{ python_min }}
+    - flit-core >=3.11,<4
   run:
-    - python >=3.11
+    - python {{ python_min }}
     - numpy >=2
     - scipy >=1.15
     - matplotlib >=3.10
@@ -31,11 +32,11 @@ requirements:
     
 test:
   requires:
-    - python >=3.11
-  source_files:
-    - scripting_demo.py
+    - pytest
   imports:
     - pyboat
+  commands:
+    - pytest -v
 
 app:
   entry: pyBOAT
