@@ -10,7 +10,7 @@ source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: c0cbb5d16e2e6f70ad85423a1fa9c9370e7b8be024523261212e02da4882004f
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - pyboat = pyboat:main
