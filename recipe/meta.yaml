@@ -22,7 +22,7 @@ requirements:
     - python {{ python_min }}
     - flit-core >=3.11,<4
   run:
-    - python {{ python_min }}
+    - python >={{ python_min }}
     - numpy >=2
     - scipy >=1.15
     - matplotlib >=3.10
