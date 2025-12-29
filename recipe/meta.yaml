@@ -35,6 +35,8 @@ test:
     - pyboat
   requires:
     - pytest
+  source_files:
+    - tests  
   commands:
     - pytest -v
     - python -m pyboat --debug    
