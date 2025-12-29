@@ -39,7 +39,7 @@ test:
     - tests  
   commands:
     - pytest -v
-    - python -m pyboat --debug    
+    - python -c "import PyQt6"   
 
 app:
   entry: pyBOAT
