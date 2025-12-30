@@ -1,0 +1,43 @@
+name: macOS arm64 CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-macos-arm64:
+    runs-on: macos-13
+    strategy:
+      matrix:
+        python: [3.11, 3.12, 3.13]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Miniforge (arm64)
+        run: |
+          curl -L -O https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-arm64.sh
+          bash Miniforge3-MacOSX-arm64.sh -b -p $HOME/miniforge
+          echo "$HOME/miniforge/bin" >> $GITHUB_PATH
+          conda init bash
+          source $HOME/miniforge/bin/activate
+
+      - name: Create clean environment
+        run: |
+          conda create -y -n test-env python=${{ matrix.python }} -c conda-forge
+          conda activate test-env
+
+      - name: Install your package
+        run: |
+          conda activate test-env
+          conda build ./recipe
+          conda install --use-local pyboat
+          
+      - name: PyQt6 import test
+        run: |
+          conda activate test-env
+          python -c "from PyQt6.QtWidgets import QWidget"
+          
