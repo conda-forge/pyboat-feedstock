@@ -21,9 +21,7 @@ jobs:
         run: |
           curl -L -O https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-arm64.sh
           bash Miniforge3-MacOSX-arm64.sh -b -p $HOME/miniforge
-          echo "$HOME/miniforge/bin" >> $GITHUB_PATH
-          export PATH="$HOME/miniforge/bin:$PATH"
-          conda init bash
+          source "$HOME/miniforge/etc/profile.d/conda.sh"
           source $HOME/miniforge/bin/activate
 
       - name: Create clean environment
