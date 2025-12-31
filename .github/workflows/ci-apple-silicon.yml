@@ -12,26 +12,21 @@ jobs:
     strategy:
       matrix:
         python: [3.11, 3.12, 3.13]
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
-      - name: Install Miniforge (arm64)
-        run: |
-          curl -L -O https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-arm64.sh
-          bash Miniforge3-MacOSX-arm64.sh -b -p $HOME/miniforge
-          source "$HOME/miniforge/etc/profile.d/conda.sh"
-          source $HOME/miniforge/bin/activate
-
-      - name: Create clean environment
-        run: |
-          conda create -y -n test-env python=${{ matrix.python }} -c conda-forge
-          conda activate test-env
+      
+      - name: Conda installation
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          miniforge-variant: Miniforge3
+          miniforge-version: latest
+          python-version: ${{ matrix.python }}
+          activate-environment: test-env
+          auto-update-conda: false
 
       - name: Install your package
         run: |
-          conda activate test-env
           conda build ./recipe
           conda install --use-local pyboat
           
