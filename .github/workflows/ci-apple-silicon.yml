@@ -1,0 +1,38 @@
+name: macOS arm64 CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-macos-arm64:
+    runs-on: macos-14
+    strategy:
+      matrix:
+        python: [3.11, 3.12, 3.13]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Conda installation
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          miniforge-variant: Miniforge3
+          miniforge-version: latest
+          python-version: ${{ matrix.python }}
+          activate-environment: test-env
+          auto-update-conda: false
+
+      - name: Install your package
+        run: |
+          conda install -y -c conda-forge conda-build
+          conda build ./recipe
+          conda install --use-local pyboat
+          
+      - name: PyQt6 import test
+        run: |
+          conda activate test-env
+          python -c "from PyQt6.QtWidgets import QWidget"
+          

@@ -10,7 +10,7 @@ source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: c0cbb5d16e2e6f70ad85423a1fa9c9370e7b8be024523261212e02da4882004f
 build:
-  number: 2
+  number: 3
   noarch: python
   entry_points:
     - pyboat = pyboat:main
@@ -39,7 +39,7 @@ test:
     - tests  
   commands:
     - pytest -v
-    - python -c "import PyQt6"   
+    - python -c "from PyQt6.QtWidgets import QWidget"   
 
 app:
   entry: pyBOAT
