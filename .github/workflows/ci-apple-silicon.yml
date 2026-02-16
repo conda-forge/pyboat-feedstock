@@ -31,8 +31,4 @@ jobs:
           conda build ./recipe
           conda install --use-local pyboat
           
-      - name: PyQt6 import test
-        run: |
-          conda activate test-env
-          python -c "from PyQt6.QtWidgets import QWidget"
           

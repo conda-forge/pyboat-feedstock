@@ -1,5 +1,5 @@
 {% set name = "pyboat" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -8,9 +8,9 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c0cbb5d16e2e6f70ad85423a1fa9c9370e7b8be024523261212e02da4882004f
+  sha256: 20be5aac8e0cc192b79cbc1b9ccd9709cf8ae198e5cefc1c8b98eb68a75e2d5f
 build:
-  number: 3
+  number: 0
   noarch: python
   entry_points:
     - pyboat = pyboat:main
@@ -27,19 +27,18 @@ requirements:
     - scipy >=1.15
     - matplotlib >=3.10
     - pandas >=2
-    - pyqt6 >=6.8
+    - pyside6 >=6.8
     - openpyxl >=3.1.3
-    
+
 test:
   imports:
     - pyboat
   requires:
     - pytest
   source_files:
-    - tests  
+    - tests
   commands:
     - pytest -v
-    - python -c "from PyQt6.QtWidgets import QWidget"   
 
 app:
   entry: pyBOAT
