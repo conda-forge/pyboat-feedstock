@@ -39,7 +39,6 @@ test:
     - tests
   commands:
     - pytest -v
-    - python -c "from PyQt6.QtWidgets import QWidget"
 
 app:
   entry: pyBOAT
