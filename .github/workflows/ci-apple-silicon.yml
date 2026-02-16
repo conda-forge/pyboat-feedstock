@@ -33,6 +33,7 @@ jobs:
           
       - name: PyQt6 import test
         run: |
+          conda init
           conda activate test-env
           python -c "from PyQt6.QtWidgets import QWidget"
           
