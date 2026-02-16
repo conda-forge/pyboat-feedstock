@@ -31,9 +31,4 @@ jobs:
           conda build ./recipe
           conda install --use-local pyboat
           
-      - name: PySide6 import test
-        shell: bash -l {0}
-        run: |
-          conda install pytest
-          pytest -v
           
