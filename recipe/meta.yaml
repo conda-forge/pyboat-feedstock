@@ -1,5 +1,5 @@
 {% set name = "pyboat" %}
-{% set version = "1.0.1" %}
+{% set version = "1.1.0" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 20be5aac8e0cc192b79cbc1b9ccd9709cf8ae198e5cefc1c8b98eb68a75e2d5f
+  sha256: 6f5644e21c1015548155ac7e6651693de0fc382a6abc9ff56127c5ffae04581f
 build:
   number: 0
   noarch: python
